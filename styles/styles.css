@@ -9,8 +9,8 @@
 }
 
 section {
-   /* scroll-snap-align: start;*/
-    scroll-behavior: smooth;
+   /* scroll-snap-align: start;
+    scroll-behavior: smooth;*/
 }
 
 html, body.myBody {
@@ -134,6 +134,8 @@ html, body.myBody {
 .solutionHeader {
     font-weight: bold;
     font-size: 3em;
+    width: 70%;
+    margin-bottom: 1em;
 }
 
 .solutionSection {
@@ -156,11 +158,9 @@ html, body.myBody {
 
 .solBackWrapper {
     position: absolute;
-    background: #cacaca;
     width: 100%;
     height: 100%;
     z-index: 2;
-    border-radius: 56px;
 }
 
 .solBack {
@@ -188,9 +188,13 @@ html, body.myBody {
 
 .solText p {
     color: #000000;
-    font-size: 40px;
-    line-height: 48px;
     font-weight: bold;
+}
+.solText {
+    font-size: 1.5em;
+}
+.solNumberText {
+    font-size: 2.2em;
 }
 
 .solScreen {
