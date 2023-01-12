@@ -114,7 +114,7 @@
                         <p class="solText"><span class="solNumberText solNumMobile">3. </span> Вашим друзьям остается <wbr>только принять или <wbr> отклонить приглашение.</p>
                     </div>
                     <div class="d-flex col-sm-6 justify-content-center flex-column solScreen">
-                        <img src="assets/images/rooms2.svg">
+                        <img class="lastScreenSol" id="lastScreenSolId" src="assets/images/rooms2.svg">
                     </div>
                 </div>
             </div>
@@ -134,21 +134,21 @@
                 </p>
             </div>
             <div class="d-flex col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 formWrapper">
-            <form class="d-flex flex-wrap row align-items-start justify-content-center col-12 myForm" method="post" id="form1">
-                <div class="d-flex col-6 contactInputWrapper">
-                    <input class="contactInput" placeholder="Email" type="email" id="email">
+            <form class="d-flex flex-wrap row align-items-start justify-content-center col-12 myForm" id="form1">
+                <div class="d-flex col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 contactInputWrapper">
+                    <input class="contactInput" placeholder="Email" type="email" id="email" name="email" form="form1">
                 </div>
-                <div class="d-flex col-6 contactInputWrapper instWrap">
-                    <input class="contactInput" type="text" placeholder="Instagram" id="inst">
+                <div class="d-flex col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 contactInputWrapper instWrap">
+                    <input class="contactInput" type="text" placeholder="Instagram" id="inst" name="inst" form="form1">
                 </div>
-                <div class="d-flex row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 sexInputWrapper">
+                <div class="d-flex col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 sexInputWrapper">
                     <p class="d-flex col-12 sexInfo">Пол</p>
-                    <input class="sexInput" type="radio" id="male" name="sex" value="male"><label for="male">Мужской</label>
-                    <input class="sexInput" type="radio" id="female" name="sex" value="female"><label for="female">Женский</label>
+                    <div><input class="sexInput" type="radio" id="male" name="sex" value="male"><label for="male">Мужской</label></div>
+                    <div><input class="sexInput" type="radio" id="female" name="sex" value="female"><label for="female">Женский</label></div>
                 </div>
                 <div class="d-flex row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ageInputWrapper">
                     <p class="d-flex col-12 sexInfo">Возраст</p>
-                    <select class="ageInput">
+                    <select class="ageInput" name="ageList" form="form1">
                         <option value="0">Укажите диапазон</option>
                         <option value="1">15-17</option>
                         <option value="2">18-21</option>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="d-flex col-12 flex-column justify-content-center align-items-center commentWrapper">
                     <p class="commentText">Если у Вас есть пожелания, замечания или остались вопросы касательно приложения, напишите их ниже.</p>
-                    <textarea class="commentInput" id="comment" maxlength="200" placeholder="Комментарий"></textarea>
+                    <textarea class="commentInput" id="comment" name="comment" maxlength="200" placeholder="Комментарий" form="form1"></textarea>
                 </div>
                 <div class="d-flex col-12 justify-content-center align-items-center">
                     <input class="buttonSend" type="submit" value="Отправить">

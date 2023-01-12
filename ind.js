@@ -55,6 +55,26 @@ function reCountLineCoords(line, circle1, circle2, section, toHeader, fromHeader
     }
 }
 
+let form = document.getElementById("form1")
+
+form.addEventListener("submit", function (event) {
+    let data = new FormData(form)
+    console.log(data)
+    let user = {
+        email: "",
+        instagram: "",
+        age: "",
+        sex: "",
+        comment: ""
+    };
+    let output = "";
+    for (const entry of data) {
+        console.log(entry)
+    };
+    console.log(output)
+    event.preventDefault();
+}, false)
+
 
 
 

@@ -24,7 +24,7 @@ html, body.myBody {
 .mainHeader {
     padding-top: 2.5em;
     padding-bottom: 1em;
-    z-index: 5;
+    z-index: 10;
     background: rgba(219, 219, 219, 0.2);
     backdrop-filter: blur(23px);
     transition: 2s;
@@ -343,13 +343,18 @@ html, body.myBody {
     outline: none;
 }
 
-.contactInput::placeholder{
+.contactInput::placeholder {
+    color: #262626;
+}
+
+.commentInput::placeholder {
     color: #262626;
 }
 
 .sexInputWrapper {
     padding: 0;
     margin: 1em 0 2em 0;
+    flex-direction: column;
 }
 
 .sexInput {
@@ -410,7 +415,7 @@ html, body.myBody {
     .problems1Screen {
         height: 65vh;
     }
-    .sec2ProblemsBlock p {
+    .sec2ProblemsBlock p, .bigProblem p {
         font-size: 1.7em;
     }
 }
@@ -437,7 +442,7 @@ html, body.myBody {
     .sec1ScreenBlock {
         justify-content: end;
     }
-    .sec2ProblemsBlock p {
+    .sec2ProblemsBlock p, .bigProblem p {
         font-size: 1.3em;
         margin-bottom: 2.5em;
     }
@@ -543,6 +548,13 @@ html, body.myBody {
 }
 
 @media (max-width: 575px) {
+    .instWrap {
+        margin-top: 1em;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 575px) {
     .solNumDesktop {
         display: none;
     }
@@ -569,7 +581,10 @@ html, body.myBody {
         height: 90vh;
     }
     .solScreen img {
-        height: 85%;
+        height: 65vh;
+    }
+    .verticalLine1 {
+        display: none;
     }
 }
 
@@ -580,14 +595,92 @@ html, body.myBody {
     .sec1ScreenBlock, .sec1ScreenBlock img {
         height: 80%;
     }
-    .sec2ProblemsBlock p {
+    .sec2ProblemsBlock p, .bigProblem p {
         font-size: 1em;
         margin-bottom: 1.2em;
+    }
+    .solScreen img {
+        height: 62vh;
+    }
+}
+
+@media (max-width: 520px){
+    .solScreen img {
+        height: 60vh;
     }
 }
 
 @media (max-width: 500px) {
     .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 1.6em;
+    }
+    .solScreen {
+        padding: 0;
+    }
+    .solText {
+        font-size: 1em;
+    }
+    .sexInputWrapper {
+        flex-direction: column;
+    }
+    .problemsFooterText {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .sec2ProblemsBlock p, .bigProblem p {
+        font-size: 1em;
+        font-weight: 400;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+    .problems1Screen {
+        height: 45vh;
+    }
+    .solutionBlock {
+        height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .problems1Screen {
+        height: 41vh;
+    }
+    .solScreen img {
+        height: 65vh;
+    }
+    #lastScreenSolId{
+        height: 50vh;
+    }
+}
+
+@media (max-width: 370px) {
+    .solScreen img {
+        height: 60vh;
+    }
+    .solScreen {
+        padding: 0 0 1em 0;
+    }
+}
+
+@media (max-width: 340px) {
+    .solScreen img {
+        height: 50vh;
+    }
+    #lastScreenSolId{
+        height: 45vh;
+    }
+}
+
+
+@media (max-width: 310px) {
+    .solScreen img {
+        height: 50vh;
+    }
+    #lastScreenSolId{
+        height: 40vh;
     }
 }
