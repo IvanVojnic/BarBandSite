@@ -1,16 +1,15 @@
 .mainBlock{
     padding: 0;
-    position: absolute;
-    height: 100vh;
+    /* position: absolute; */
+    /* height: 100vh; */
     background: #dbdbdb;
-    overflow-y: scroll;
-   /* scroll-snap-type: y mandatory;*/
-    scroll-behavior: smooth;
+   /* scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;*/
 }
 
 section {
-   /* scroll-snap-align: start;
-    scroll-behavior: smooth;*/
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
 }
 
 html, body.myBody {
@@ -22,14 +21,29 @@ html, body.myBody {
     scroll-behavior: smooth;
 }
 
-.headerFixed {
-    padding: 1em 6em 1em 6em;
-    position: fixed;
-    top: 0;
+.mainHeader {
+    padding-top: 2.5em;
+    padding-bottom: 1em;
     z-index: 5;
+    background: rgba(219, 219, 219, 0.2);
+    backdrop-filter: blur(23px);
+    transition: 2s;
+    transition-property: position;
 }
 
-.headerFixed span h3 {
+.headerFixed {
+    position: fixed;
+    transition: all 2s;
+    transition-property: position;
+}
+
+.headerStatic {
+    position: static;
+    transition: all 2s;
+    transition-property: position;
+}
+
+.mainHeader span h3 {
     font-weight: bold;
 }
 
@@ -53,6 +67,7 @@ html, body.myBody {
     position: relative;
     padding: 0;
     z-index: 1;
+    flex-wrap: wrap;
 }
 
 .backgroundWrapSection {
@@ -60,6 +75,7 @@ html, body.myBody {
     width: 100%;
     height: 100%;
     z-index: 2;
+    top: 0;
 }
 
 .backSection {
@@ -70,11 +86,13 @@ html, body.myBody {
 .sec1InfoBlock {
     z-index: 3;
     padding-top: 3em;
+    justify-content: center;
 }
 
 .sec1ScreenBlock {
-    z-index: 3;
+    z-index: 7;
     padding-top: 3em;
+    justify-content: center;
 }
 
 .sec1InfoBlock p {
@@ -99,19 +117,41 @@ html, body.myBody {
 
 .sec2ProblemsBlock {
     z-index: 3;
-    padding-top: 4em;
+    padding: 4em 0 0 0;
     box-sizing: border-box;
 }
 
 .sec2ProblemsScreenBlock {
     z-index: 3;
-    padding-top: 6em;
+    padding: 6em 0 0 0;
 }
 
 .sec2ProblemsBlock p {
     color: #ffffff;
     font-size: 2em;
     font-weight: bold;
+}
+
+.problemLeft {
+    text-align: end;
+}
+
+.bigProblem {
+    display: none;
+    margin: 2em 0 -3em 0;
+    text-align: center;
+    z-index: 3;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hideProblem {
+    display: flex;
+}
+
+.problemLast {
+    margin-bottom: 0 !important;
 }
 
 .problems1Screen {
@@ -136,12 +176,13 @@ html, body.myBody {
     font-size: 3em;
     width: 70%;
     margin-bottom: 1em;
+    margin-top: 1em;
+    white-space: nowrap;
 }
 
 .solutionSection {
     padding: 3em 0 0 0;
     position: relative;
-    height: inherit;
 }
 .solWrapper {
     position: relative;
@@ -153,7 +194,8 @@ html, body.myBody {
 
 .solutionBlock{
     padding: 0;
-    margin: 0;
+    margin: 1em 0 1em 0;
+    max-height: 100vh;
 }
 
 .solBackWrapper {
@@ -173,6 +215,7 @@ html, body.myBody {
     height: 80%;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 .solCircle span{
@@ -200,6 +243,13 @@ html, body.myBody {
 .solScreen {
     height: 100%;
     z-index: 3;
+    padding: 22px;
+}
+
+.solScreenLast {
+    height: 100%;
+    z-index: 3;
+    padding: 40px 0 0 0;
 }
 
 .solScreen img {
@@ -214,4 +264,237 @@ html, body.myBody {
     background: linear-gradient(#000000, #000000);
     height: 100px;
     z-index: 5;
+}
+
+/********************/
+
+.solutionLast {
+    padding: 5%;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+/************form************/
+
+.formSection {
+    padding: 4%;
+    height: 400px;
+}
+
+.conclusionText1 {
+    z-index: 3;
+    height: 20%;
+    margin-bottom: 2%;
+}
+
+.conclusionText1 p {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.conclusionText1Span {
+    color: rgba(236, 236, 236, 0.8);
+    font-size: 24px !important;
+    font-weight: 400;
+}
+
+.formWrapper {
+    z-index: 3;
+    height: 60%;
+}
+
+.myForm p, .myForm label {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.myForm label {
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-bottom: 0;
+}
+
+.contactInputWrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.contactInput {
+    background: rgba(202, 202, 202, 0.3);
+    padding: 21px;
+    border: none;
+    box-shadow: inset 0px 4px 30px rgba(255,255,255,0.3);
+    backdrop-filter: blur(35px);
+    border-radius: 15px;
+    height: 50px;
+    width: 60%;
+    outline: none;
+}
+
+.contactInput::placeholder{
+    color: #262626;
+}
+
+.sexInputWrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.sexInput {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.sexInfo {
+    font-size: 28px;
+}
+
+.ageInputWrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.ageInput {
+    background: rgba(202, 202, 202, 0.3);
+    box-shadow: inset 0px 4px 30px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(35px);
+    /* Note: backdrop-filter has minimal browser support */
+    padding: 10px;
+    outline: none;
+    border-radius: 15px;
+}
+
+.commentText {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.commentInput {
+    background: rgba(202, 202, 202, 0.3);
+    outline: none;
+    width: 100%;
+    height: 124px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.buttonSend {
+    background: rgba(202, 202, 202, 0.3);
+    padding: 5px 25px 5px 25px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid #ffffff;
+}
+
+@media (max-width: 1600px) {
+    .sec1InfoBlock p {
+        font-size: 2.5em;
+    }
+    .problems1Screen {
+        height: 65vh;
+    }
+    .sec2ProblemsBlock p {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 1400px) {
+    .problemsFooterText, .solutionHeader {
+        font-size: 2.7em;
+    }
+    .solNumberText {
+        font-size: 2em;
+    }
+    .solText {
+        font-size: 1.3em;
+    }
+    .solutionBlock {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sec1InfoBlock p {
+        width: 100%;
+    }
+    .sec1ScreenBlock {
+        justify-content: end;
+    }
+    .sec2ProblemsBlock p {
+        font-size: 1.3em;
+        margin-bottom: 2.5em;
+    }
+    .problemsFooterText, .solutionHeader {
+        font-size: 2.5em;
+    }
+    .sec2ProblemsBlock p {
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .sec1ScreenBlock, .sec1InfoBlock {
+        justify-content: center;
+    }
+    .sec1InfoBlock p {
+        text-align: center;
+    }
+    .problemsFooterText, .solutionHeader {
+        font-size: 2.2em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .sec2ProblemsBlock p {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+    }
+    .solCircle {
+        display: none;
+    }
+}
+
+@media (max-width: 713px) {
+    .bigProblem {
+        display: flex;
+    }
+    .hideProblem {
+        display: none;
+    }
+    .problemsFooterText, .solutionHeader {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .problems1Screen {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .sec1InfoBlock p {
+        font-size: 2em;
+    }
+    .sec1ScreenBlock, .sec1ScreenBlock img {
+        height: 80%;
+    }
+    .sec2ProblemsBlock p {
+        font-size: 1em;
+        margin-bottom: 1.2em;
+    }
+}
+
+@media (max-width: 500px) {
+    .problemsFooterText, .solutionHeader {
+        font-size: 1.6em;
+    }
 }
