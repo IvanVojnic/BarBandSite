@@ -63,10 +63,10 @@ html, body.myBody {
 }
 
 .firstSection {
-    width: 100%;
-    position: relative;
+    /* width: 100%; */
+    /* position: relative; */
     padding: 0;
-    z-index: 1;
+    /* z-index: 1; */
     flex-wrap: wrap;
 }
 
