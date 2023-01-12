@@ -3,8 +3,8 @@
     /* position: absolute; */
     /* height: 100vh; */
     background: #dbdbdb;
-   /* scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;*/
+    /* scroll-snap-type: y mandatory;
+     scroll-behavior: smooth;*/
 }
 
 section {
@@ -190,6 +190,7 @@ html, body.myBody {
     margin: 0;
     height: 85%;
     align-items: stretch;
+    flex-direction: row;
 }
 
 .solutionBlock{
@@ -240,7 +241,16 @@ html, body.myBody {
     font-size: 2.2em;
 }
 
+.solNumDesktop {
+    display: inline-block;
+}
+
+.solNumMobile {
+    display: none;
+}
+
 .solScreen {
+    align-items: end;
     height: 100%;
     z-index: 3;
     padding: 22px;
@@ -311,8 +321,8 @@ html, body.myBody {
 }
 
 .myForm label {
-    margin-left: 10px;
-    margin-right: 40px;
+    margin-left: 7px;
+    margin-right: 36px;
     margin-bottom: 0;
 }
 
@@ -339,7 +349,7 @@ html, body.myBody {
 
 .sexInputWrapper {
     padding: 0;
-    margin: 0;
+    margin: 1em 0 2em 0;
 }
 
 .sexInput {
@@ -353,7 +363,7 @@ html, body.myBody {
 
 .ageInputWrapper {
     padding: 0;
-    margin: 0;
+    margin: 1em 0 2em 0;
 }
 
 .ageInput {
@@ -406,7 +416,7 @@ html, body.myBody {
 }
 
 @media (max-width: 1400px) {
-    .problemsFooterText, .solutionHeader {
+    .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 2.7em;
     }
     .solNumberText {
@@ -431,11 +441,23 @@ html, body.myBody {
         font-size: 1.3em;
         margin-bottom: 2.5em;
     }
-    .problemsFooterText, .solutionHeader {
+    .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 2.5em;
     }
     .sec2ProblemsBlock p {
         margin-bottom: 2em;
+    }
+    .solutionHeader {
+        margin: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .solScreen img{
+        height: 80%;
+    }
+    .conclusionText1 p {
+        font-size: 1.8em;
     }
 }
 
@@ -446,7 +468,7 @@ html, body.myBody {
     .sec1InfoBlock p {
         text-align: center;
     }
-    .problemsFooterText, .solutionHeader {
+    .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 2.2em;
     }
 }
@@ -460,6 +482,22 @@ html, body.myBody {
     .solCircle {
         display: none;
     }
+    .solText {
+        font-size: 1.2em;
+    }
+    .solNumberText {
+        font-size: 1.8em;
+    }
+    .solScreen {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .instWrap {
+        justify-content: end;
+    }
+    .contactInput {
+        width: 85%;
+    }
 }
 
 @media (max-width: 713px) {
@@ -469,14 +507,69 @@ html, body.myBody {
     .hideProblem {
         display: none;
     }
-    .problemsFooterText, .solutionHeader {
+    .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 2em;
+    }
+}
+
+@media (max-width: 650px){
+    .solScreen img {
+        height: 70%;
+    }
+    .solText {
+        font-size: 1.1em;
+    }
+    .conclusionText1 p {
+        font-size: 1.4em;
+    }
+    .myForm p, .myForm label {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 600px) {
     .problems1Screen {
         height: 50vh;
+    }
+    .solWrapper {
+        padding: 0;
+    }
+    .solText {
+        padding-right: 0;
+    }
+    .solScreen {
+        padding: 0 1em 0 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .solNumDesktop {
+        display: none;
+    }
+    .solNumMobile {
+        display: inline-block;
+    }
+    .solWrapper {
+        align-items: center;
+        padding-top: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    .solText {
+        font-size: 1.2em;
+        flex-basis: content;
+    }
+    .solScreen, .solScreen {
+        align-items: center;
+    }
+    .solutionBlock {
+        height: 90vh;
+    }
+    .solScreen img {
+        height: 85%;
     }
 }
 
@@ -494,7 +587,7 @@ html, body.myBody {
 }
 
 @media (max-width: 500px) {
-    .problemsFooterText, .solutionHeader {
+    .problemsFooterText, .solutionHeader, .solutionLast {
         font-size: 1.6em;
     }
 }
