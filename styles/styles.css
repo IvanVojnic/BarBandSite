@@ -288,7 +288,7 @@ html, body.myBody {
 
 .formSection {
     padding: 4%;
-    height: 400px;
+    height: auto;
 }
 
 .conclusionText1 {

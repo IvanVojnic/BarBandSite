@@ -57,25 +57,38 @@ function reCountLineCoords(line, circle1, circle2, section, toHeader, fromHeader
 
 let form = document.getElementById("form1")
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", async function (event) {
     let data = new FormData(form)
     console.log(data)
     let user = {
         email: "",
-        instagram: "",
+        inst: "",
         age: "",
         sex: "",
         comment: ""
     };
-    let output = "";
+
     for (const entry of data) {
-        console.log(entry)
+        user[entry[0]] = entry[1]
     };
-    console.log(output)
+    console.log(user)
+    await sendUser(user)
     event.preventDefault();
 }, false)
 
+const sendUser = async (user) => {
 
+    let res = await fetch(`http://localhost:5000/addUser`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(user)
+    })
+    if (res.ok) {
+        alert("Сообщение отправлено!")
+    }
+}
 
 
 
